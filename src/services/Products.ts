@@ -9,6 +9,11 @@ export default class ProductsService {
     this.model = new ProductsModel(connection);
   }
 
+  public async findAll(): Promise<Products[]> {
+    const products = await this.model.findAll();
+    return products;
+  }
+
   public async create(product: Products): Promise<Products> {
     const newProduct = await this.model.create(product);
     return newProduct;
