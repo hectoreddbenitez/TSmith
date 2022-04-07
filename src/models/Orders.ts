@@ -7,7 +7,8 @@ export default class OrdersModel {
   constructor(connection: Pool) {
     this.connection = connection;
   }
-
+  
+  // com ajuda de FATnando Sena. Obg fera!!
   public async findAll(): Promise<Orders[]> {
     const result = await this
       .connection.execute<RowDataPacket[]>(
