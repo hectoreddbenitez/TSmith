@@ -9,8 +9,8 @@ export default class UsersService {
     this.model = new UsersModel(connection);
   }
 
-  public async create(user: Users): Promise<Users> {
-    const newUser = await this.model.create(user);
-    return newUser;
+  public async create(user: Users): Promise<boolean> {
+    await this.model.create(user);
+    return true;
   }
 }
